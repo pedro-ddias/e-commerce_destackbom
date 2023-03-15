@@ -23,8 +23,8 @@
             <div class="form-control">
                 <label for="username">Nome</label>
                 <input type="text" id="username">
-                <i><img class="img-success" src="/images/success-icon.svg"></i>
-                <i><img class="img-error" src="/images/error-icon.svg"></i>
+                <i><img class="img-success" src="/Sistemas/Objetos_interativos/img/success-icon.svg"></i>
+                <i><img class="img-error" src="/Sistemas/Objetos_interativos/img/error-icon.svg"></i>
                 <small id="small">Error</small>
             </div>
             <div class="form-control">
@@ -184,14 +184,14 @@
     const password = document.getElementById('password');
     const passwordtwo = document.getElementById('passwordtwo');
 
-    form.addEventListener('submit', (e)=>{
-        e.preventDefault() 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
 
         checkInputs();
-    }) 
+    })
 
     //validacao
-    function checkInputs(){
+    function checkInputs() {
         const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
         const passwordValue = password.value.trim();
@@ -199,30 +199,30 @@
 
         if (usernameValue === '') {
             errorValidation(username, "Preencha este campo");
-        } else{
-            successValidation(username)
+        } else {
+            successValidation(username);
         }
 
         if (emailValue === '') {
             errorValidation(email, "Preencha este campo");
-        } else{
-            successValidation(email)
+        } else {
+            successValidation(email);
         }
 
         if (passwordValue === '') {
             errorValidation(password, "Preencha este campo");
-        } else if(passwordValue.length < 8) {
+        } else if (passwordValue.length < 8) {
             errorValidation(password, "Senha deve ter mais de 8 dígitos");
-        } else{
-            successValidation(password)
+        } else {
+            successValidation(password);
         }
 
         if (passwordtwoValue === '') {
             errorValidation(passwordtwo, "Preencha este campo");
-        } else if (passwordtwoValue === passwordValue) {
+        } else if (passwordtwoValue !== passwordValue) {
             errorValidation(passwordtwo, "As senhas são diferentes");
-        } else{
-            successValidation(passwordtwo)
+        } else {
+            successValidation(passwordtwo);
         }
     }
 
@@ -238,4 +238,5 @@
         formControl.className = 'form-control success';
     }
 </script>
+
 </html>
